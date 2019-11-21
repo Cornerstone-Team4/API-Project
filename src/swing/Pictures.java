@@ -33,7 +33,7 @@ import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Home extends JFrame implements CallJson{
+public class Pictures extends JFrame implements CallJson{
 
 	private JPanel contentPane;
 
@@ -44,7 +44,7 @@ public class Home extends JFrame implements CallJson{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Home frame = new Home();
+					Pictures frame = new Pictures();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -58,7 +58,7 @@ public class Home extends JFrame implements CallJson{
 	 * Create the frame.
 	 */
 	
-	public Home() {
+	public Pictures() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
 		contentPane = new JPanel();
@@ -69,7 +69,7 @@ public class Home extends JFrame implements CallJson{
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.activeCaptionText);
 		
-		JLabel lblNasa = new JLabel("Space Pictures");
+		JLabel lblNasa = new JLabel("Pictures");
 		lblNasa.setForeground(SystemColor.activeCaption);
 		lblNasa.setFont(new Font("American Typewriter", Font.PLAIN, 20));
 		
@@ -131,26 +131,6 @@ public class Home extends JFrame implements CallJson{
 		);
 		panel_2.setLayout(gl_panel_2);
 		
-		JButton btnNewButton = new JButton("New");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							Mission frame = new Mission();
-							frame.setVisible(true);
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});
-			}
-		});
-		btnNewButton.setHorizontalTextPosition(SwingConstants.CENTER);
-		btnNewButton.setBackground(new Color(0, 0, 255));
-		btnNewButton.setForeground(new Color(0, 0, 153));
-		panel_1.add(btnNewButton);
-		
 		JButton btnSave = new JButton("Save");
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -177,22 +157,22 @@ public class Home extends JFrame implements CallJson{
 		btnSend.setBackground(Color.BLUE);
 		panel_1.add(btnSend);
 		
-		JButton button = new JButton("Paint");
-		button.setHorizontalTextPosition(SwingConstants.CENTER);
-		button.setForeground(new Color(0, 0, 153));
-		button.setBackground(Color.BLUE);
-		panel_1.add(button);
+		JButton btnHome = new JButton("Home");
+		btnHome.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnHome.setForeground(new Color(0, 0, 153));
+		btnHome.setBackground(Color.BLUE);
+		panel_1.add(btnHome);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNasa, GroupLayout.PREFERRED_SIZE, 154, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(436, Short.MAX_VALUE))
+					.addComponent(lblNasa, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(492, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
+			gl_panel.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(lblNasa))
 		);
