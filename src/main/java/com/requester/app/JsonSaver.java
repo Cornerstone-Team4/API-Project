@@ -6,26 +6,33 @@ public class JsonSaver {
 
 	String filePath;
 	String fileName;
+	String fileExtension;
 	File file;
 	FileWriter aWriter;
 	
-	public JsonSaver(String filePath, String fileName) {
+	public void createOutput(String filePath, String fileName, String fileExtension) {
 		this.filePath = filePath;
 		this.fileName = fileName;
+		this.fileExtension = fileExtension;
+		createOutput();
 	}
 	
-	public JsonSaver(String filePath) {
+	public void createOutput(String filePath, String fileName) {
 		this.filePath = filePath;
-		this.fileName = "outputJson.json";
+		this.fileName = fileName;
+		this.fileExtension = ".json";
+		createOutput();
 	}
 	
-	public JsonSaver() {
+	public void createOutput(String fileName) {
 		this.filePath = "./db/";
-		this.fileName = "outputJson.json";
+		this.fileName = fileName;
+		this.fileExtension = ".json";
+		createOutput();
 	}
 	
 	public void createOutput() {
-		file = new File(filePath+fileName);
+		file = new File(filePath+fileName+fileExtension);
 		try {
 			file.createNewFile();
 		} catch (IOException e) {
@@ -35,10 +42,10 @@ public class JsonSaver {
 	
 	public void writeToFile(String inputString) {
 		try {
-			aWriter = new FileWriter(filePath+fileName);
-			for (char c : inputString.toCharArray()) {
-				aWriter.write(c);
-			}
+			aWriter = new FileWriter(filePath+fileName+fileExtension);
+			aWriter.write(String.format(inputString));
+			aWriter.write(System.lineSeparator());
+			aWriter.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
