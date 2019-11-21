@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.sun.prism.Graphics;
+
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
@@ -33,7 +33,7 @@ import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Home extends JFrame {
+public class Home extends JFrame implements CallJson{
 
 	private JPanel contentPane;
 
@@ -50,12 +50,14 @@ public class Home extends JFrame {
 					e.printStackTrace();
 				}
 			}
+			
 		});
 	}
 
 	/**
 	 * Create the frame.
 	 */
+	
 	public Home() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
@@ -67,12 +69,12 @@ public class Home extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.activeCaptionText);
 		
-		JLabel lblNasa = new JLabel("NASA API");
+		JLabel lblNasa = new JLabel("Space Pictures");
 		lblNasa.setForeground(SystemColor.activeCaption);
 		lblNasa.setFont(new Font("American Typewriter", Font.PLAIN, 20));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(SystemColor.menu);
+		panel_1.setBackground(new Color(0, 0, 0));
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(0, 0, 0));
@@ -99,11 +101,13 @@ public class Home extends JFrame {
 					.addContainerGap())
 		);
 		
-//		ImageIcon icon = new ImageIcon("/Users/ayaka/eclipse-workspace/nasa/images/Screen Shot 2019-11-20 at 7.22.37 PM.png");
+//		ImageIcon icon = new ImageIcon("/Users/ayaka/eclipse-workspace/nasa/images/sunrise-1756274_640.jpg");
 //		Image img = icon.getImage();
 		BufferedImage myPicture = null;
 		try {
-			myPicture = ImageIO.read(new File("/Users/ayaka/eclipse-workspace/nasa/images/sunrise-1756274_640.jpg"));
+			//this image is on the internet?
+			//myPicture = ImageIO.read(new File("https://apod.nasa.gov/apod/image/1911/Simeis147_HaOIIIRGB_Lindemann1024.jpg"));
+			myPicture = ImageIO.read(new File(pic));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -127,7 +131,7 @@ public class Home extends JFrame {
 		);
 		panel_2.setLayout(gl_panel_2);
 		
-		JButton btnNewButton = new JButton("Mission");
+		JButton btnNewButton = new JButton("New");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
@@ -147,34 +151,48 @@ public class Home extends JFrame {
 		btnNewButton.setForeground(new Color(0, 0, 153));
 		panel_1.add(btnNewButton);
 		
-		JButton button = new JButton("Mission");
+		JButton btnSave = new JButton("Save");
+		btnSave.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							SaveImage frame = new SaveImage();
+							frame.saveImage();
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+				});								
+			}
+		});
+		btnSave.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnSave.setForeground(new Color(0, 0, 153));
+		btnSave.setBackground(Color.BLUE);
+		panel_1.add(btnSave);
+		
+		JButton btnSend = new JButton("Send");
+		btnSend.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnSend.setForeground(new Color(0, 0, 153));
+		btnSend.setBackground(Color.BLUE);
+		panel_1.add(btnSend);
+		
+		JButton button = new JButton("Paint");
 		button.setHorizontalTextPosition(SwingConstants.CENTER);
 		button.setForeground(new Color(0, 0, 153));
 		button.setBackground(Color.BLUE);
 		panel_1.add(button);
-		
-		JButton button_1 = new JButton("Mission");
-		button_1.setHorizontalTextPosition(SwingConstants.CENTER);
-		button_1.setForeground(new Color(0, 0, 153));
-		button_1.setBackground(Color.BLUE);
-		panel_1.add(button_1);
-		
-		JButton button_2 = new JButton("Mission");
-		button_2.setHorizontalTextPosition(SwingConstants.CENTER);
-		button_2.setForeground(new Color(0, 0, 153));
-		button_2.setBackground(Color.BLUE);
-		panel_1.add(button_2);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNasa, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(646, Short.MAX_VALUE))
+					.addComponent(lblNasa, GroupLayout.PREFERRED_SIZE, 154, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(436, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
-			gl_panel.createParallelGroup(Alignment.LEADING)
-				.addGroup(Alignment.TRAILING, gl_panel.createSequentialGroup()
+			gl_panel.createParallelGroup(Alignment.TRAILING)
+				.addGroup(Alignment.LEADING, gl_panel.createSequentialGroup()
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 					.addComponent(lblNasa))
 		);
