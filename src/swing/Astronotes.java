@@ -22,8 +22,10 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.border.EmptyBorder;
 
-public class Astronotes extends JFrame implements CallJson{
+public class Astronotes extends JFrame{
 	private JPanel contentPane;
+	ApodJ myob = new ApodJ();
+	String pic = myob.toString();
 
 	/**
 	 * Launch the application.
@@ -92,6 +94,7 @@ public class Astronotes extends JFrame implements CallJson{
 //		ImageIcon icon = new ImageIcon("/Users/ayaka/eclipse-workspace/nasa/images/sunrise-1756274_640.jpg");
 //		Image img = icon.getImage();
 		BufferedImage myPicture = null;
+		
 		try {
 			//this image is on the internet?
 			//myPicture = ImageIO.read(new File("https://apod.nasa.gov/apod/image/1911/Simeis147_HaOIIIRGB_Lindemann1024.jpg"));

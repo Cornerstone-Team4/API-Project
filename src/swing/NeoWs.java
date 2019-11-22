@@ -33,7 +33,9 @@ import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class NeoWs extends JFrame implements CallJson{
+public class NeoWs extends JFrame{
+	ApodJ myob = new ApodJ();
+	String pic = myob.toString();
 
 	private JPanel contentPane;
 

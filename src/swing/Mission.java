@@ -38,5 +38,12 @@ public class Mission extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 	}
+	
+	
+	public void test() {
+		ApodJ callson = new ApodJ();
+		
+	}
+	
 
 }
