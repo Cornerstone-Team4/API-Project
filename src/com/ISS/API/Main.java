@@ -1,6 +1,8 @@
 package com.ISS.API;
 
 import org.json.JSONException;
+
+
 import org.json.JSONObject;
 
 public class Main {
@@ -10,7 +12,7 @@ public class Main {
 
 	public static void main(String[] args) throws JSONException  {
 			
-		ISS_Parser parser = new ISS_Parser("C:\\Users\\ruach\\Desktop\\TestFiles\\");
+		ISS_Parser parser = new ISS_Parser("C:\\Users\\ruach\\Desktop\\Programming\\API-Project\\db\\");
 		
 		if (parser.data.getString("message").equals("success")) {
 			int timeStamp;

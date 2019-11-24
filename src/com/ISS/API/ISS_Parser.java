@@ -1,6 +1,7 @@
 package com.ISS.API;
 
 import org.json.JSONException;
+
 import org.json.JSONObject;
 import com.ISS.API.JsonReader;
 
@@ -13,7 +14,7 @@ public class ISS_Parser {
 	 String sourceFile;
 	 public JSONObject data;
 	 public ISS_Parser(String aFile) {
-		 jReader.readFromFile(aFile, "jsonFile"); 
+		 jReader.readFromFile(aFile, "issJson"); 
 		 try {
 			data = new JSONObject(jReader.getReaderString());
 		} catch (JSONException e) {
