@@ -1,7 +1,9 @@
-package com.daniel.app;
+package com.ISS.Test;
 
-import com.parser.JsonReader;
-import com.requester.app.*;;
+import com.ISS.requester.JsonRequester;
+
+import com.ISS.requester.JsonSaver;
+import com.ISS.API.JsonReader;
 
 public class CLIinterface {
 	
@@ -13,7 +15,7 @@ public class CLIinterface {
 	public static void main(String[] args) {
 		CLIinterface cli = new CLIinterface();
 		cli.downloadJson("http://api.open-notify.org/iss-now.json", "issJson");
-		cli.downloadJson("https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0", "insightJson");
+		cli.downloadJson("https://api.nasa.gov/planetary/apod?api_key=XHt1KQMu5Ebrnkibv2retQ43ki05GESJdhToXsZh", "insightJson");
 		cli.parseJson("issJson");
 	}
 	
