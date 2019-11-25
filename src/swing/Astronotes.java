@@ -24,8 +24,8 @@ import javax.swing.border.EmptyBorder;
 
 public class Astronotes extends JFrame{
 	private JPanel contentPane;
-	ApodJ myob = new ApodJ();
-	String pic = myob.toString();
+	static ApodJ myob = new ApodJ();
+	static String pic = myob.getPic();
 
 	/**
 	 * Launch the application.
@@ -34,7 +34,7 @@ public class Astronotes extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Pictures frame = new Pictures();
+					Astronotes frame = new Astronotes();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -91,13 +91,9 @@ public class Astronotes extends JFrame{
 					.addContainerGap())
 		);
 		
-//		ImageIcon icon = new ImageIcon("/Users/ayaka/eclipse-workspace/nasa/images/sunrise-1756274_640.jpg");
-//		Image img = icon.getImage();
 		BufferedImage myPicture = null;
 		
 		try {
-			//this image is on the internet?
-			//myPicture = ImageIO.read(new File("https://apod.nasa.gov/apod/image/1911/Simeis147_HaOIIIRGB_Lindemann1024.jpg"));
 			myPicture = ImageIO.read(new File(pic));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

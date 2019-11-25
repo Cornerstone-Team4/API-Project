@@ -34,10 +34,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class NeoWs extends JFrame{
-	ApodJ myob = new ApodJ();
-	String pic = myob.toString();
 
 	private JPanel contentPane;
+	static ApodJ myob = new ApodJ();
+	static String pic = myob.getPic();
 
 	/**
 	 * Launch the application.
@@ -71,7 +71,7 @@ public class NeoWs extends JFrame{
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.activeCaptionText);
 		
-		JLabel lblNasa = new JLabel("Pictures");
+		JLabel lblNasa = new JLabel("Near Earth object");
 		lblNasa.setForeground(SystemColor.activeCaption);
 		lblNasa.setFont(new Font("American Typewriter", Font.PLAIN, 20));
 		
@@ -107,8 +107,6 @@ public class NeoWs extends JFrame{
 //		Image img = icon.getImage();
 		BufferedImage myPicture = null;
 		try {
-			//this image is on the internet?
-			//myPicture = ImageIO.read(new File("https://apod.nasa.gov/apod/image/1911/Simeis147_HaOIIIRGB_Lindemann1024.jpg"));
 			myPicture = ImageIO.read(new File(pic));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -120,6 +118,24 @@ public class NeoWs extends JFrame{
 //		g.drawImage(img, 0, 0, WIDTH, HEIGHT, null);
 //		lblNewLabel.setIcon((Icon) g);
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
+		gl_panel_2.setHorizontalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 468, Short.MAX_VALUE)
+					.addContainerGap())
+		);
+		gl_panel_2.setVerticalGroup(
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addComponent(lblNewLabel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 320, Short.MAX_VALUE)
+		);
+		panel_2.setLayout(gl_panel_2);
+		
+		JLabel lblNewLabe2 = new JLabel(new ImageIcon(myPicture));
+		getContentPane().add(lblNewLabel);
+//		Graphics2D g = bi.createGraphics();
+//		g.drawImage(img, 0, 0, WIDTH, HEIGHT, null);
+//		lblNewLabel.setIcon((Icon) g);		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(Alignment.TRAILING, gl_panel_2.createSequentialGroup()
