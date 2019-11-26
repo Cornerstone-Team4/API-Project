@@ -11,10 +11,10 @@ public class NeoWsJ {
 		private String mnDiameter;
 		//near_earth_objects / nearestimated_diameter/ kilometers/ estimated_diameter_min : 0.0366906138
 				
-		private String mxDiameter;
+		private String mxDiameter = "0.01";
 		//near_earth_objects / nearestimated_diameter/ kilometers/ estimated_diameter_max : 0.0366906138
 				
-		private String hazardous;
+		private String hazardous = "false";
 		//feet / is_potentially_hazardous_asteroid : false
 		
 		//==========================================================================

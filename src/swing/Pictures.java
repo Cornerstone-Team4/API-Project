@@ -1,4 +1,6 @@
 package swing;
+import requester.*;
+import Test.*;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -33,6 +35,7 @@ import java.awt.event.ActionEvent;
 
 public class Pictures extends JFrame {
 	static ApodJ myob = new ApodJ();
+
 	static String pic = myob.getPic();
 
 	private JPanel contentPane;
@@ -41,6 +44,7 @@ public class Pictures extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		myob.setPic(pic);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
