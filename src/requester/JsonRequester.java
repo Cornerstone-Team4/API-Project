@@ -40,7 +40,6 @@ public class JsonRequester {
 				urlResponseBuilder.append(line);
 			}
 			outputRequestString = urlResponseBuilder.toString();
-			System.out.println(outputRequestString);
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
