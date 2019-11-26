@@ -1,6 +1,8 @@
-package parser;
+package saver;
+
 
 import java.io.*;
+
 
 public class JsonReader {
 
@@ -34,7 +36,7 @@ public class JsonReader {
 	public void readFromFile() {
 		try {
 			aReader = new FileReader(filePath+fileName+fileExtension);
-			System.out.println(aReader);
+			//System.out.println(aReader);
 			String auxString = "";
 			int auxChar = 0;
 			while((auxChar = aReader.read()) > 0) {
