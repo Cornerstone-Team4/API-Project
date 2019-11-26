@@ -1,6 +1,9 @@
-package com.ISS.requester;
+package requester;
 
+import java.awt.image.BufferedImage;
 import java.io.*;
+
+import javax.imageio.ImageIO;
 
 public class JsonSaver {
 
@@ -49,7 +52,14 @@ public class JsonSaver {
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+	}
+	
+	public void writeToImage(BufferedImage inputImage) {
+		try {
+			ImageIO.write(inputImage, "jpg", file);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 }
