@@ -1,5 +1,6 @@
 package neows;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,13 +36,25 @@ public class Neo_Manager {
 	  String rawString = jReader.getReaderString();
 	  jParser.parseFromString(rawString);
 	  jParser.getParsedData();
-	  String links = null;
+	  JSONObject links;
 	  
 	  System.out.println(rawString);
 	  jObject = jParser.getParsedData();
+	  links = (JSONObject) jObject.get("links");
 	  
-		 links = (String) jObject.get("links");
-		 System.out.println(links);
+//	  JSONObject near_earth_objects = (JSONObject) links.get("near_earth_objects");
+	  JSONArray near_earth_objects = (JSONArray) jObject.get("near_earth_objects");
+	  JSONObject neoOJsonObject;
+	  JSONObject feet = (JSONObject) jObject.get("feet");
+	  System.out.println(feet);
+	 
+	  JSONObject estimated_diameter = (JSONObject) near_earth_objects.get(0);
+	  /*
+	   * The kilometers is not working, something's off with getting the JSONArray value 
+	   */
+	  JSONObject kilometers = (JSONObject) estimated_diameter.get("kilometers");
+	  
+	  System.out.println(estimated_diameter.toString());
 				
 	
 		
