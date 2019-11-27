@@ -34,7 +34,7 @@ public class JsonSaver {
 		createOutput();
 	}
 	
-	public void createOutput() {
+	private void createOutput() {
 		file = new File(filePath+fileName+fileExtension);
 		try {
 			file.createNewFile();
