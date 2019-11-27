@@ -1,6 +1,8 @@
 package swing;
 import requester.*;
 import Test.*;
+import saver.*;
+
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -34,11 +36,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class Pictures extends JFrame {
-	static ApodJ myob = new ApodJ();
+	static CallJasonApod myob = new CallJasonApod();
 
 	static String pic = myob.getPic();
 
 	private JPanel contentPane;
+	static Astronotes frameAst;
+	static Pictures framePic;
+	static NeoWs frameNeo;
+
+	
 
 	/**
 	 * Launch the application.
@@ -48,8 +55,8 @@ public class Pictures extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Pictures frame = new Pictures();
-					frame.setVisible(true);
+					framePic = new Pictures();
+					framePic.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -99,7 +106,8 @@ public class Pictures extends JFrame {
 						.addComponent(panel_1, GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
 						.addComponent(panel_2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 				.addContainerGap()));
-
+		
+//-----------------show the picture from Apod on lblNewLabel------------------------------
 		BufferedImage myPicture = null;
 		try {
 			myPicture = ImageIO.read(new File(pic));
@@ -109,6 +117,8 @@ public class Pictures extends JFrame {
 		}
 		JLabel lblNewLabel = new JLabel(new ImageIcon(myPicture));
 		getContentPane().add(lblNewLabel);
+//-----------------------------------------------------------------------------------------------	
+		
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(gl_panel_2.createParallelGroup(Alignment.LEADING).addGroup(Alignment.TRAILING,
 				gl_panel_2.createSequentialGroup().addContainerGap()
@@ -118,7 +128,7 @@ public class Pictures extends JFrame {
 				Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 320, Short.MAX_VALUE));
 		panel_2.setLayout(gl_panel_2);
 
-		JButton btnSave = new JButton("Save");
+		JButton btnSave = new JButton("Edit");
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
@@ -138,13 +148,25 @@ public class Pictures extends JFrame {
 		btnSave.setBackground(Color.BLUE);
 		panel_1.add(btnSave);
 
-		JButton btnSend = new JButton("Send");
-		btnSend.setHorizontalTextPosition(SwingConstants.CENTER);
-		btnSend.setForeground(new Color(0, 0, 153));
-		btnSend.setBackground(Color.BLUE);
-		panel_1.add(btnSend);
 
 		JButton btnHome = new JButton("Home");
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EventQueue.invokeLater(new Runnable() {
+					public void run() {
+						try {
+							frameAst = new Astronotes();
+							frameAst.setVisible(true);
+						framePic.setVisible(false);
+
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+					}
+					
+				});
+			}
+		});
 		btnHome.setHorizontalTextPosition(SwingConstants.CENTER);
 		btnHome.setForeground(new Color(0, 0, 153));
 		btnHome.setBackground(Color.BLUE);

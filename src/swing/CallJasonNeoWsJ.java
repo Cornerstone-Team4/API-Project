@@ -1,6 +1,6 @@
 package swing;
 
-public class NeoWsJ {
+public class CallJasonNeoWsJ {
 /////// from NeoWs
 		private String startDate; 
 		//Starting date for asteroid search : I couldn't figure out what key is for it
@@ -11,11 +11,13 @@ public class NeoWsJ {
 		private String mnDiameter;
 		//near_earth_objects / nearestimated_diameter/ kilometers/ estimated_diameter_min : 0.0366906138
 				
-		private String mxDiameter = "0.01";
+		private String mxDiameter = "0.02";
 		//near_earth_objects / nearestimated_diameter/ kilometers/ estimated_diameter_max : 0.0366906138
 				
 		private String hazardous = "false";
 		//feet / is_potentially_hazardous_asteroid : false
+		
+		private String distance;
 		
 		//==========================================================================
 		//getters
@@ -34,6 +36,9 @@ public class NeoWsJ {
 		}
 		public String getHazardous() {
 			return hazardous;
+		}
+		public String getDistance() {
+			return distance;
 		}
 		
 		//==========================================================================
@@ -54,6 +59,9 @@ public class NeoWsJ {
 		}
 		public void setHazardous(String hazardous) {
 			this.hazardous = hazardous;
+		}
+		public void setDistance(String distance) {
+			this.distance = distance;
 		}
 		
 }

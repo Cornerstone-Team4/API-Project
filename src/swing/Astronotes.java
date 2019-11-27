@@ -24,7 +24,11 @@ import javax.swing.border.EmptyBorder;
 
 public class Astronotes extends JFrame{
 	private JPanel contentPane;
-	static ApodJ myob = new ApodJ();
+	static Astronotes frameAst;	
+	static Pictures framePic;
+	static NeoWs frameNeo;
+	
+	static CallJasonApod myob = new CallJasonApod();
 	static String pic = myob.getPic();
 
 	/**
@@ -34,8 +38,8 @@ public class Astronotes extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Astronotes frame = new Astronotes();
-					frame.setVisible(true);
+					frameAst = new Astronotes();
+					frameAst.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -124,8 +128,9 @@ public class Astronotes extends JFrame{
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							Mission frame = new Mission();
-							frame.setVisible(true);
+							frameNeo = new NeoWs();
+							frameNeo.setVisible(true);
+							frameAst.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -138,30 +143,15 @@ public class Astronotes extends JFrame{
 		btnNewButton.setForeground(new Color(0, 0, 153));
 		panel_1.add(btnNewButton);
 		
-		JButton btnSend = new JButton("Mission");
-		btnSend.setHorizontalTextPosition(SwingConstants.CENTER);
-		btnSend.setForeground(new Color(0, 0, 153));
-		btnSend.setBackground(Color.BLUE);
-		panel_1.add(btnSend);
-		
-		JButton btnWeather = new JButton("Weather");
-		btnWeather.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnWeather.setHorizontalTextPosition(SwingConstants.CENTER);
-		btnWeather.setForeground(new Color(0, 0, 153));
-		btnWeather.setBackground(Color.BLUE);
-		panel_1.add(btnWeather);
-		
 		JButton btnSave = new JButton("Picture");
 		btnSave.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							SaveImage frame = new SaveImage();
-							frame.saveImage();
+							framePic = new Pictures();
+							framePic.setVisible(true);
+							frameAst.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

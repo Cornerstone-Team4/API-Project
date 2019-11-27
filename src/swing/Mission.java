@@ -41,7 +41,7 @@ public class Mission extends JFrame {
 	
 	
 	public void test() {
-		ApodJ callson = new ApodJ();
+		CallJasonApod callson = new CallJasonApod();
 		
 	}
 	

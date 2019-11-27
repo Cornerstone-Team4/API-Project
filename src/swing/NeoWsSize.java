@@ -34,12 +34,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
 
-public class NeoWs extends JFrame{
-	
+public class NeoWsSize extends JFrame{
 	static NeoWs frameNeo;
 	static NeoWsSize frameNeoS;
 	static NeoWsDistance frameNeoD;
-	static Astronotes frameAst;
 	
 
 	private JPanel contentPane;
@@ -62,8 +60,8 @@ public class NeoWs extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frameNeo = new NeoWs();
-					frameNeo.setVisible(true);
+					frameNeoS = new NeoWsSize();
+					frameNeoS.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -76,7 +74,7 @@ public class NeoWs extends JFrame{
 	 * Create the frame.
 	 */
 	
-	public NeoWs() {
+	public NeoWsSize() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
 		contentPane = new JPanel();
@@ -87,7 +85,7 @@ public class NeoWs extends JFrame{
 		JPanel panel = new JPanel();
 		panel.setBackground(SystemColor.activeCaptionText);
 		
-		JLabel lblNasa = new JLabel("Near Earth object");
+		JLabel lblNasa = new JLabel("Near Earth object -size");
 		lblNasa.setForeground(SystemColor.activeCaption);
 		lblNasa.setFont(new Font("American Typewriter", Font.PLAIN, 20));
 		
@@ -137,15 +135,13 @@ public class NeoWs extends JFrame{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		JLabel lblObject = new JLabel(new ImageIcon(object));
 		
-		JLabel lblNewLabel = new JLabel("from");
-		lblNewLabel.setForeground(Color.GREEN);
+		JLabel lbMaxDiameter = new JLabel(mxDiameter);
+		lbMaxDiameter.setForeground(Color.GREEN);
 		
-		JLabel lbStart = new JLabel(start);
-		lbStart.setForeground(Color.GREEN);
-		
-		JLabel lblTo = new JLabel("to");
-		lblTo.setForeground(Color.GREEN);
+		JLabel lbObDiameter = new JLabel("0");
+		lbObDiameter.setForeground(Color.GREEN);
 		
 		JLabel lbEnd = new JLabel(end);
 		
@@ -158,6 +154,8 @@ public class NeoWs extends JFrame{
 		}
 		
 		String lbtxt = "<html><p>If Earth were the same size as VancouverIsland...</p></html>";
+		JLabel lblIfEarthWere = new JLabel(lbtxt);
+		lblIfEarthWere.setForeground(Color.GREEN);
 		
 	
 		
@@ -167,29 +165,44 @@ public class NeoWs extends JFrame{
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(lbStart, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.UNRELATED)
-							.addComponent(lblTo, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
-							.addGap(45)
-							.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
+							.addGap(59)
+							.addComponent(lbMaxDiameter, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(122)
+							.addContainerGap()
 							.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(68, Short.MAX_VALUE))
+					.addGap(6)
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addComponent(lblIfEarthWere, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING, false)
+							.addComponent(lblObject, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+							.addGroup(gl_panel_2.createSequentialGroup()
+								.addGap(19)
+								.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+									.addGroup(gl_panel_2.createSequentialGroup()
+										.addPreferredGap(ComponentPlacement.RELATED)
+										.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
+									.addGroup(gl_panel_2.createSequentialGroup()
+										.addGap(49)
+										.addComponent(lbObDiameter, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))))))
+					.addGap(217))
 		);
 		gl_panel_2.setVerticalGroup(
 			gl_panel_2.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblIfEarthWere)
+							.addPreferredGap(ComponentPlacement.UNRELATED)
+							.addComponent(lblObject, GroupLayout.PREFERRED_SIZE, 145, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addGap(18)
+							.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE)))
+					.addPreferredGap(ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lbStart, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblTo, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(110, Short.MAX_VALUE))
+						.addComponent(lbObDiameter, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
+						.addComponent(lbMaxDiameter, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)))
 		);
 		panel_2.setLayout(gl_panel_2);
 		
@@ -199,9 +212,8 @@ public class NeoWs extends JFrame{
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							frameNeoS = new NeoWsSize();
-							frameNeoS.setVisible(true);
-							frameNeo.setVisible(false);
+							SaveImage frame = new SaveImage();
+							frame.saveImage();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -222,31 +234,36 @@ public class NeoWs extends JFrame{
 						try {
 							frameNeoD = new NeoWsDistance();
 							frameNeoD.setVisible(true);
-							frameNeo.setVisible(false);
+							frameNeoS.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}
-				});								
+					
+				});
+				
 			}
 		});
+		btnSend.setHorizontalTextPosition(SwingConstants.CENTER);
+		btnSend.setForeground(new Color(0, 0, 153));
 		btnSend.setBackground(Color.BLUE);
-		
 		panel_1.add(btnSend);
-		JButton btnNewButton = new JButton("Home");
+		
+		JButton btnNewButton = new JButton("Back");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				EventQueue.invokeLater(new Runnable() {
 					public void run() {
 						try {
-							frameAst = new Astronotes();
-							frameAst.setVisible(true);
-							frameNeo.setVisible(false);
+							frameNeo = new NeoWs();
+							frameNeo.setVisible(true);
+							frameNeoS.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}
-				});								
+					
+				});
 			}
 		});
 		panel_1.add(btnNewButton);
@@ -255,8 +272,8 @@ public class NeoWs extends JFrame{
 			gl_panel.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel.createSequentialGroup()
 					.addContainerGap()
-					.addComponent(lblNasa, GroupLayout.PREFERRED_SIZE, 180, GroupLayout.PREFERRED_SIZE)
-					.addContainerGap(410, Short.MAX_VALUE))
+					.addComponent(lblNasa, GroupLayout.PREFERRED_SIZE, 274, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(316, Short.MAX_VALUE))
 		);
 		gl_panel.setVerticalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)

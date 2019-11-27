@@ -1,6 +1,6 @@
 package swing;
 
-public class ApodJ {
+public class CallJasonApod {
 
 ///////from APOD or whatever pic API
 		private String copyright;
@@ -8,7 +8,7 @@ public class ApodJ {
 		private String picDate;
 		//date : "2019-11-22"
 		
-		private String pic;
+		private String pic = "images/sunrise-1756274_640.jpg";
 		//url : "https://apod.nasa.gov/apod/image/1911/orion_kopa1024.jpg"		
 		private String title;		
 		//title : "Orion Rising"
@@ -43,16 +43,5 @@ public class ApodJ {
 		public void setTitle(String title) {
 			this.title = title;
 		}
-		
-		
-	
-
-
-
-	
-
-		
-	
-
 
 }

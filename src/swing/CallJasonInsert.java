@@ -1,6 +1,6 @@
 package swing;
 
-public class InsertJ {
+public class CallJasonInsert {
 ///////from Insert(Weather on Mars)
 		private String mnMars;
 		//AT/ mn : -99.926
