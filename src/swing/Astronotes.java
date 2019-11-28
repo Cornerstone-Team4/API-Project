@@ -105,9 +105,7 @@ public class Astronotes extends JFrame{
 		}
 		JLabel lblNewLabel = new JLabel(new ImageIcon(myPicture));
 		getContentPane().add(lblNewLabel);
-//		Graphics2D g = bi.createGraphics();
-//		g.drawImage(img, 0, 0, WIDTH, HEIGHT, null);
-//		lblNewLabel.setIcon((Icon) g);
+
 		GroupLayout gl_panel_2 = new GroupLayout(panel_2);
 		gl_panel_2.setHorizontalGroup(
 			gl_panel_2.createParallelGroup(Alignment.LEADING)
@@ -121,6 +119,10 @@ public class Astronotes extends JFrame{
 				.addComponent(lblNewLabel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 320, Short.MAX_VALUE)
 		);
 		panel_2.setLayout(gl_panel_2);
+		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 		
 		JButton btnNewButton = new JButton("Danger");
 		btnNewButton.addActionListener(new ActionListener() {
