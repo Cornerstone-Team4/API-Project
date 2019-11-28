@@ -51,6 +51,7 @@ public class NeoWsSize extends JFrame{
 	static NeoWSOb myob2 = new NeoWSOb();
 	static String objectImage = myob2.NeoWsOb();
 	static String obDiameter;
+	static String obTxt = myob2.NeoWsObTxt();
 		
 
 	/**
@@ -140,7 +141,7 @@ public class NeoWsSize extends JFrame{
 		JLabel lbMaxDiameter = new JLabel(mxDiameter);
 		lbMaxDiameter.setForeground(Color.GREEN);
 		
-		JLabel lbObDiameter = new JLabel("0");
+		JLabel lbObDiameter = new JLabel("It'd be the same size as " + obTxt);
 		lbObDiameter.setForeground(Color.GREEN);
 		
 		JLabel lbEnd = new JLabel(end);
@@ -165,29 +166,25 @@ public class NeoWsSize extends JFrame{
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_panel_2.createSequentialGroup()
-							.addGap(59)
-							.addComponent(lbMaxDiameter, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_panel_2.createSequentialGroup()
 							.addContainerGap()
-							.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
-					.addGap(6)
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
-						.addComponent(lblIfEarthWere, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING, false)
-							.addComponent(lblObject, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-							.addGroup(gl_panel_2.createSequentialGroup()
-								.addGap(19)
-								.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+							.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)
+							.addGap(6)
+							.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblIfEarthWere, GroupLayout.PREFERRED_SIZE, 249, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING, false)
+									.addComponent(lblObject, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 									.addGroup(gl_panel_2.createSequentialGroup()
-										.addPreferredGap(ComponentPlacement.RELATED)
-										.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE))
-									.addGroup(gl_panel_2.createSequentialGroup()
-										.addGap(49)
-										.addComponent(lbObDiameter, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE))))))
-					.addGap(217))
+										.addGap(19)
+										.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)))))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addGap(50)
+							.addComponent(lbMaxDiameter, GroupLayout.PREFERRED_SIZE, 120, GroupLayout.PREFERRED_SIZE)
+							.addGap(74)
+							.addComponent(lbObDiameter, GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)))
+					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.TRAILING)
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_panel_2.createSequentialGroup()
 					.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
@@ -199,32 +196,14 @@ public class NeoWsSize extends JFrame{
 						.addGroup(gl_panel_2.createSequentialGroup()
 							.addGap(18)
 							.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+					.addGap(37)
 					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
 						.addComponent(lbObDiameter, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lbMaxDiameter, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE)))
+						.addComponent(lbMaxDiameter, GroupLayout.PREFERRED_SIZE, 29, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(44, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);
 		
-		JButton btnSave = new JButton("Size");
-		btnSave.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				EventQueue.invokeLater(new Runnable() {
-					public void run() {
-						try {
-							SaveImage frame = new SaveImage();
-							frame.saveImage();
-						} catch (Exception e) {
-							e.printStackTrace();
-						}
-					}
-				});								
-			}
-		});
-		btnSave.setHorizontalTextPosition(SwingConstants.CENTER);
-		btnSave.setForeground(new Color(0, 0, 153));
-		btnSave.setBackground(Color.BLUE);
-		panel_1.add(btnSave);
 		
 		JButton btnSend = new JButton("Distance");
 		btnSend.addActionListener(new ActionListener() {

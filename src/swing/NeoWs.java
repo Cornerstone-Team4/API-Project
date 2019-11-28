@@ -52,6 +52,8 @@ public class NeoWs extends JFrame{
 	
 	static NeoWSOb myob2 = new NeoWSOb();
 	static String objectImage = myob2.NeoWsOb();
+	static String hazardTxt = myob2.NeoWsHazardTxt();
+	static String hazardImg = myob2.NeoWsHazardImg();
 	static String obDiameter;
 		
 
@@ -149,15 +151,21 @@ public class NeoWs extends JFrame{
 		
 		JLabel lbEnd = new JLabel(end);
 		
+		
+		
+		String lbtxt = "<html><p>If Earth were the same size as VancouverIsland...</p></html>";
+		
 		BufferedImage hazard = null;
 		try {
-			hazard = ImageIO.read(new File("images/crystal-2898037_640.png"));
+			hazard = ImageIO.read(new File(hazardImg));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		JLabel lblhazardImg = new JLabel(new ImageIcon(hazard));
 		
-		String lbtxt = "<html><p>If Earth were the same size as VancouverIsland...</p></html>";
+		JLabel lblhazardTxt = new JLabel(hazardTxt);
+		lblhazardTxt.setForeground(Color.GREEN);
 		
 	
 		
@@ -177,18 +185,29 @@ public class NeoWs extends JFrame{
 						.addGroup(gl_panel_2.createSequentialGroup()
 							.addGap(122)
 							.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 209, GroupLayout.PREFERRED_SIZE)))
-					.addContainerGap(68, Short.MAX_VALUE))
+					.addPreferredGap(ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING, false)
+						.addComponent(lblhazardTxt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+						.addComponent(lblhazardImg, GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
+					.addContainerGap())
 		);
 		gl_panel_2.setVerticalGroup(
-			gl_panel_2.createParallelGroup(Alignment.TRAILING)
-				.addGroup(Alignment.LEADING, gl_panel_2.createSequentialGroup()
-					.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
-						.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lbStart, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lblTo, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
-						.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
-					.addGap(18)
-					.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE)
+			gl_panel_2.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panel_2.createSequentialGroup()
+					.addGroup(gl_panel_2.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addGroup(gl_panel_2.createParallelGroup(Alignment.BASELINE)
+								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lbStart, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblTo, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lbEnd, GroupLayout.PREFERRED_SIZE, 25, GroupLayout.PREFERRED_SIZE))
+							.addGap(18)
+							.addComponent(lbasteroids, GroupLayout.PREFERRED_SIZE, 177, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_panel_2.createSequentialGroup()
+							.addGap(6)
+							.addComponent(lblhazardImg, GroupLayout.PREFERRED_SIZE, 72, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(lblhazardTxt, GroupLayout.PREFERRED_SIZE, 26, GroupLayout.PREFERRED_SIZE)))
 					.addContainerGap(110, Short.MAX_VALUE))
 		);
 		panel_2.setLayout(gl_panel_2);

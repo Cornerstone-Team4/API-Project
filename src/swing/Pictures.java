@@ -1,10 +1,7 @@
 package swing;
-import requester.*;
-import Test.*;
-import saver.*;
 
 
-import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,9 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.FlowLayout;
 import java.awt.SystemColor;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -26,12 +20,9 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.Icon;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
-import java.awt.Canvas;
-import java.awt.Panel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
