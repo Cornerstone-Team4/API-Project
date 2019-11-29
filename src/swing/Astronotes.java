@@ -119,7 +119,6 @@ public class Astronotes extends JFrame{
 				.addComponent(lblNewLabel, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 320, Short.MAX_VALUE)
 		);
 		panel_2.setLayout(gl_panel_2);
-		////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -182,6 +181,6 @@ public class Astronotes extends JFrame{
 		panel.setLayout(gl_panel);
 		contentPane.setLayout(gl_contentPane);
 		
-		
+	
 	}
 }

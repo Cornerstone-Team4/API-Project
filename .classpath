@@ -7,10 +7,14 @@
 		</attributes>
 	</classpathentry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/ruach/Desktop/Programming/API-Project/lib/java-json.jar"/>
 =======
 	<classpathentry kind="lib" path="lib/gson-2.6.2.jar"/>
 	<classpathentry kind="lib" path="lib/java-json.jar"/>
 >>>>>>> 44a79cbe2d521802f24d8b6269d2079ed2559e14
+=======
+	<classpathentry kind="lib" path="/home/avinoamr/Desktop/Programming/java sources/java-json.jar"/>
+>>>>>>> e1f3f27c9053d525f1d4c7273b7cd0b23e72f9c8
 	<classpathentry kind="output" path="bin"/>
 </classpath>
