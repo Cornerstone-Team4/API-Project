@@ -27,6 +27,10 @@ public class Neo_Parser {
 	JsonParser jParser = new JsonParser();
 	String requestString;
 	ArrayList<JSONObject> jsonObjects_AL = new ArrayList<JSONObject>();
+	
+	ArrayList<Object> id_List = new ArrayList<Object>();
+	ArrayList<Object> name_List = new ArrayList<Object>();
+	ArrayList<Object> absolute_Magnitude = new ArrayList<Object>();
 
 	public void request() {
 
@@ -52,26 +56,46 @@ public class Neo_Parser {
 //			System.out.println("The key is: " + neoArray.get(i) + " an the index is: " + i);
 		}
 		
-		for (int i = 0; i < jsonObjects_AL.size(); i++) {
-			
-			
-			
-		}
+		keyDoubleValue(jsonObjects_AL.size(), neoArray, "absolute_magnitude_h" , absolute_Magnitude);
+		keyStringValue(jsonObjects_AL.size(), neoArray, "name", name_List);
 		
-		keyValue(jsonObjects_AL.size(), neoArray);
-		
+		keyStringValue(jsonObjects_AL.size(), neoArray, "id", id_List);
+//		System.out.println(jsonObjects_AL.size());
 	}
 	
-	void keyValue ( int size , JSONArray aJsonObject) throws JSONException {
+	void keyStringValue ( int size , JSONArray aJsonObject, Object The_Key, ArrayList<Object> arrayList) throws JSONException {
 		int keys = size;
 		int values = size;
 		JSONObject jsonObject = null;
 		for (int i = 0; i < size; i ++ ) {
 			
 			 jsonObject = (JSONObject) aJsonObject.get(i);
+			 
+			 arrayList.add(jsonObject.getString((String) The_Key));
+			 System.out.println(jsonObject.getString((String) The_Key));
 			
 		}
-		System.out.println(jsonObject);
+		
+		System.out.println( "The array list of " + The_Key + " is: " + arrayList);
+	}
+	
+	void keyDoubleValue  (int size , JSONArray aJsonObject, String The_Key, ArrayList<Object> arrayList) throws JSONException {
+		
+		int keys = size;
+		int values = size;
+		JSONObject jsonObject = null;
+		for (int i = 0; i < size; i ++ ) {
+			
+			 jsonObject = (JSONObject) aJsonObject.get(i);
+			 
+			 arrayList.add(jsonObject.getDouble(The_Key));
+			 System.out.println(jsonObject.getDouble(The_Key));
+			
+		}
+		
+		System.out.println( "The array list of " + The_Key + " is: " + arrayList);
+	
+		
 	}
 	
 	
@@ -219,16 +243,6 @@ public class Neo_Parser {
 //		return null;
 
 //	}
-
-
-
-
-
-
-
-
-
-
 
 
 
