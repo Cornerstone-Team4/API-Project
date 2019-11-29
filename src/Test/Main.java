@@ -1,12 +1,5 @@
 package Test;
-import requester.*;
-
-
-import saver.*;
-
-import java.awt.image.BufferedImage;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import neows.Neo_Parser;
 
@@ -20,6 +13,6 @@ public class Main {
 		
 	neo_Manager.request();
 	neo_Manager.parse();	
-		neo_Manager.function();
+		
 	}	
 }
