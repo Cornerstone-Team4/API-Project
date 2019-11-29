@@ -2,14 +2,15 @@ package neows;
 
 public class Neo {
 	
+	private int ID;
 	private String startDate; 
 	private String endDate;
 	private boolean hazardous; 
 	private int mnDiameter; //kilometer
 	private int mxDiameter; //kilometer
+	private int missDistance; //kilometers
 	private int aproxVolume; //kilometers^3
 	private int estimatedMass; //tons
-	private int missDistance; //kilometers
 	
 	//Getters and Setters
 	public String getStartDate() {
@@ -24,7 +25,7 @@ public class Neo {
 	public void setEndDate(String endDate) {
 		this.endDate = endDate;
 	}
-	public boolean isHazardous() {
+	public boolean getHazardous() {
 		return hazardous;
 	}
 	public void setHazardous(boolean hazardous) {
@@ -57,6 +58,13 @@ public class Neo {
 		aproxVolume = (int) ((4/3)*Math.PI*mnDiameter*mnDiameter*mxDiameter);
 		return aproxVolume;
 	}
+	public void setID(int iD) {
+		ID = iD;
+	}
+	public int getID() {
+		return ID;
+	}
+	
 	
 	
 	
