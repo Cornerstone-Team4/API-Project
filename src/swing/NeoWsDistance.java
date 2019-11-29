@@ -193,7 +193,7 @@ public class NeoWsDistance extends JFrame{
 						try {
 							frameNeoS = new NeoWsSize();
 							frameNeoS.setVisible(true);
-							frameNeoD.setVisible(false);
+						//	frameNeoD.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -214,7 +214,7 @@ public class NeoWsDistance extends JFrame{
 						try {
 							frameAst = new Astronotes();
 							frameAst.setVisible(true);
-							frameNeoD.setVisible(false);
+						//	frameNeoD.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

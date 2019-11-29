@@ -148,7 +148,7 @@ public class Pictures extends JFrame {
 						try {
 							frameAst = new Astronotes();
 							frameAst.setVisible(true);
-						framePic.setVisible(false);
+						//framePic.setVisible(false);
 
 						} catch (Exception e) {
 							e.printStackTrace();

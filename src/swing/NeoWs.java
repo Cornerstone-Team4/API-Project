@@ -220,7 +220,7 @@ public class NeoWs extends JFrame{
 						try {
 							frameNeoS = new NeoWsSize();
 							frameNeoS.setVisible(true);
-							frameNeo.setVisible(false);
+							//frameNeo.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -241,7 +241,7 @@ public class NeoWs extends JFrame{
 						try {
 							frameNeoD = new NeoWsDistance();
 							frameNeoD.setVisible(true);
-							frameNeo.setVisible(false);
+							//frameNeo.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -260,7 +260,7 @@ public class NeoWs extends JFrame{
 						try {
 							frameAst = new Astronotes();
 							frameAst.setVisible(true);
-							frameNeo.setVisible(false);
+							//frameNeo.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

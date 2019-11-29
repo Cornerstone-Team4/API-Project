@@ -213,7 +213,7 @@ public class NeoWsSize extends JFrame{
 						try {
 							frameNeoD = new NeoWsDistance();
 							frameNeoD.setVisible(true);
-							frameNeoS.setVisible(false);
+							//frameNeoS.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -236,7 +236,7 @@ public class NeoWsSize extends JFrame{
 						try {
 							frameNeo = new NeoWs();
 							frameNeo.setVisible(true);
-							frameNeoS.setVisible(false);
+							//frameNeoS.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}

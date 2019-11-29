@@ -1,5 +1,6 @@
 package swing;
 
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -131,7 +132,7 @@ public class Astronotes extends JFrame{
 						try {
 							frameNeo = new NeoWs();
 							frameNeo.setVisible(true);
-							frameAst.setVisible(false);
+							//frameAst.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -152,7 +153,7 @@ public class Astronotes extends JFrame{
 						try {
 							framePic = new Pictures();
 							framePic.setVisible(true);
-							frameAst.setVisible(false);
+							//frameAst.setVisible(false);
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
