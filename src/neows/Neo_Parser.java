@@ -55,7 +55,7 @@ public class Neo_Parser {
 		for (int i = 0; i < jsonObjects_AL.size(); i++) {
 			
 			
-			System.out.println("");
+			
 		}
 		
 		keyValue(jsonObjects_AL.size(), neoArray);
